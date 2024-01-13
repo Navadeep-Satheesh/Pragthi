@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/purchase_details.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <%- include('navbar') %>
+
+
+    <div id="purchase_details">
+
+
+
+
+        <h3>Enter Details</h3>
+
+        <form action="/complete_purchase" method="POST">
+
+
+            <input  type = "hidden" name = "product_id" value = "<%=product%>">
+
+            <div class="details_section">
+                <h3>phone</h3>
+                <input type="text" name = "phone">
+
+            </div>
+
+            <div class="details_section">
+                <h3>address</h3>
+                <input type="text" name = "address">
+            </div>
+
+
+            <div class="details_section">
+                <h3>state</h3>
+                <input type="text" name = "state" >
+            </div>
+
+            <div class="details_section">
+                <h3>city</h3>
+                <input type="text" name = "city" >
+            </div>
+
+            <div class="details_section">
+                <h3>pin code</h3>
+                <input type="text" name = "pin_code" >
+            </div>
+
+
+
+            <div class="details_section">
+                <h3>land mark</h3>
+                <input type="text" name = "land_mark">
+            </div>
+
+
+            <button id="submit_button" type="submit">SUBMIT</button>
+
+        </form>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
