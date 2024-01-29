@@ -9,7 +9,7 @@
 <body>
 
 <div class="signup-container">
-    <h2>Sign In</h2>
+    <h2>Sign Up</h2>
     <form action="/check_login" method="post">
         <div class="form-group">
             <label for="email">Email:</label>
@@ -19,7 +19,11 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Sign In</button>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit">Sign Up</button>
     </form>
 </div>
 

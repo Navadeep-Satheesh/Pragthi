@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAGTHI</title>
+
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/productDetails.css">
+
+</head>
+
+<body>
+
+    <%- include('navbar') %>
+
+
+        <div id="productDetails">
+
+
+            <img src="/static/product_images/<%= details.product_id %>.png" alt="">
+
+            <div id="details_section">
+
+                <div id="details">
+
+
+                    <h3 id="product_title">
+                        <!-- <%= details %> -->
+                        <%= details.product_name %>
+                    </h3>
+
+                    <ul>
+                        <% for(item of details.product_desc.split(",")){ %>
+                        <li> <%= item %> </li>
+                        <!-- <li>8GBRAM</li> -->
+                        <!-- <li>512GBStorage</li> -->
+                        <% }%>
+
+                    </ul>
+
+                    <h3>Rs 89999</h3>
+
+                    <button id="buy_now_button">BUY NOW</button>
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+</body>
+
+</html>

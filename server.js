@@ -72,8 +72,48 @@ app.get('/', (req, res) => {
 
 app.get('/search', async (req, res) => {
 
-    let result = await pool.query("select * from products")
-    console.log(result)
+    let query = req.query['product']
+
+    console.log(query)
+
+    let words = query.split(" ")
+
+    console.log(words)
+
+    let word_count_statement = ""
+
+    for( i in words){
+        
+        if(words[i] === ''){
+           
+            words.splice(i , 1);
+            i--;
+        }
+    }
+
+    console.log(words)
+
+    for( i in  words ){
+
+        word_count_statement += `( concat( product_name , product_desc )  like "%${words[i]}%" )`;
+        if(i < words.length-1){
+
+            word_count_statement += " + "
+        }
+
+    }
+
+    console.log(word_count_statement)
+
+    query = `select product_id ,  product_name , product_desc ,  price , 
+    ${word_count_statement}
+    as word_match_count from products 
+    where ${word_count_statement} != 0 
+    order by word_match_count desc`
+
+
+    let result = await pool.query(query)
+    // console.log(result)
 
     res.render('products_list2', { products: result[0] })
 
@@ -90,7 +130,7 @@ app.get('/details', async (req, res) => {
 
 
 
-    res.render('product_details', { 'details': result[0][0] })
+    res.render('productdetails', { 'details': result[0][0] })
 
 
 
