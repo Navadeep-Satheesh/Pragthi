@@ -4,62 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/product_list2.css">
-    <link rel="stylesheet" href="/static/css/navbar.css">
-    <title>Document</title>
+    <title>KartE</title>
+    <link rel="icon" type="image/png" href="icons/logo.png">
+    <link rel="stylesheet" href="/static/css/products_list.css">
+    <!-- <link rel="stylesheet" href="/static/css/navbar.css">-->
+    <script src="https://kit.fontawesome.com/b64b63a538.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <%- include('navbar') %>
 
+        <!--  
+    <div id="navbar">
+        <div class="main">
+            <div id="logo"><img src="icons/logo.png" alt="" height="25"></div>
+
+            <div id="mainLogo">
+                <h1>KartE</h1>
+            </div>
+        </div>
+        <div id="search">
+
+            <form action="/search" method="GET">
+
+                <input type="text" name="product" placeholder="search your product">
+                <button> <i class="fa-solid fa-magnifying-glass" alt="" height="30"></i> </button>
+
+            </form>
 
 
-        <div id="allproducts">
+        </div>
+        <div class="rightDiv">
+            <div class="right" id="home">
+                <a href="home.html">
+                    <h3>Home</h3>
 
-            <% products.forEach((product)=>{ %>
+                </a>
+            </div>
+            <div class="right" id="loginbutton">
+                <a href="login">
+                    <h3>Log in</h3>
+
+                </a>
+            </div>
+            <div class="right" id="SignupButton">
+                <a href="signup">
+                    <h3>Sign up</h3>
+                </a>
+            </div>
+            <div class="right" id="ordersicon">
+                <a href="/my_orders"><i class="fa-solid fa-cart-shopping fa-2x" style="color: rgb(44,44,110)" alt=""
+                        width="130"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
 
 
-                <div class="singleProduct">
-
-                    <form action="/details" method="get">
+        <div class="allproducts">
 
 
-                        <input type="hidden" name="product" value="<%=product.product_id%>">
-
-                        <button class="submit_div" type="submit">
-
-
-
-                            <img src="/static/product_images/<%= product.product_id %>.png" alt="image" />
-
-
-                            <div class="details">
-
-                                <h3 class="product_title">
-                                    <%= product.product_name %>
-                                </h3>
-
-                                <h3 class="product_price">Rs <%= product.price %>
-                                </h3>
-
+            <% for( item of products){ %>
+                <div class="products" id="product1">
+                    <form action="/details">
+                        <input type="hidden" name="product" value="<%=item.product_id%>">
+                        <button>
+                            <div class="img" id="img1">
+                                <a href="/product_details"><img src="static/product_images/<%=item.product_id%>.png"
+                                        alt="" height="85%" width="100%">
+                                </a>
                             </div>
+                            <div class="details" id="details1">
+                                <a href="product1.html">
+                                    <h3>Samsung</h3>
+                                    <h4> Galaxy S24 5G (Amber Yellow,8GB,512GB Storage)</h4>
+                                    <h2>89,999</h2>
 
-
-
+                                </a>
+                            </div>
                         </button>
+
                     </form>
                 </div>
 
+                <% } %>
 
-
-
-                <% }) %>
 
         </div>
-
-
-
+        <!-- </div> -->
 </body>
 
 </html>

@@ -1,75 +1,145 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
-}
+/* */
 
-.title{
-    color: rgb(27, 49, 154);
-    font-weight:600;
-    font-family: sans-serif;
-    margin-left: 20px;
-}
+.allproducts{
 
-
-
-.allProducts{
-    padding: 40px;
-    display: grid;
-   grid-template-columns: repeat( auto-fit , minmax(300px , 320px) );
-   align-items: center;
-   justify-content: center;
-    /* background-color: rebeccapurple; */
-}
-
-.singleProduct{
-
-    background-color: white;
-
+    /* margin-top: 1000px; */
+    /* padding: 40px; */
+    /* padding-left: 20%; */
+    padding-top: 150px;
+    width: 90vw;
     /* background-color: red; */
+}
+
+#mainLogo {
+    color:rgb(44, 44, 110);
+    font-family: "Georgia", serif;
+    margin-left: 5px;
+}
+
+#ordersicon{
+width: 50px;
     
-    /* height: 40vh; */
-    width: 300px;
+border-color: aliceblue;
+    
+}
+
+#SignupButton{
+    background-color: rgb(44, 44, 110);
+    
+}
+#loginbutton a{
+    text-decoration: none;
+    color:black;
+}
+#SignupButton a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#SignupButton:hover{
+   background-color: rgb(6, 94, 126);
+   border-color: rgb(6, 94, 126);
+}
+#home a{
+    text-decoration: none;
+    color: black;
+}
+#loginbutton a:hover{
+    color:rgb(44, 44, 110);
+    ;
+}
+#home a:hover{
+    color:rgb(44, 44, 110);
+    ;
+}
+#hometext{
+    box-align:center
+}
+.allproducts{
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(450px , 550px));
+    /* grid-template-rows:  repeat(3,40vh); */
+    grid-gap: 35px;
+    /* background-color: red; */
+    justify-content: center;
+    align-content:center;
+    margin:3px;
+}
+.products{
+    background-color: rgb(246, 246, 246);
+    /* color: white; */
+    overflow: hidden;
+    margin: 10px;
+    height: 50vh;
+    /* width: 40vw; */
     display: flex;
-    flex-direction: column;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    transition: 0.5s;
-    margin: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-   
 }
 
-/* .singleProduct form{ */
-    /* background-color: green; */
-    /* border: 1px solid black; */
-    /* width: 100%; */
-    /* height: 100%; */
-/* } */
+.products form{
+    display: flex;
+    /* background-color: red; */
+}
 
+.products button{
 
-.singleProduct img{
-    width: 100%;
-   
+    border: 0px;
+    background-color: transparent;
+    display: flex;
+
+}
+
+.img{
+    background-color:aliceblue;
+    height: 100%;
+    width:45%;
+    display: flex;
+    align-items: center;
+}
+.details{
+    background-color: rgb(246, 246, 246);
+    height: 100%;
+    width: 55%;
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     
 }
-
-.singleProduct form{
-    background-color: red;
+/*.det{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+   
+}*/
+.details a{
+    text-decoration: none;
+    color:black;
 }
-
-.details{
-    background-color: green;
-
+.details:hover{
+    background-color: rgb(245, 240, 240);
 }
-
-.product_desc{
-    padding: 20px;
+h2{
+    
+    font-weight: 500;
 }
-
-.product_title{
-    font-weight: 200;
+h3{
+    
+    font-weight: 600;
 }
-
-.rating{
-    font-weight: 200;
+h4{
+    
+    font-weight: 500;
+}
+h5{
+    font-weight:500 ;
+}
+h7{
+    font-weight: 500;
+    color: red;
+}
+.details *{
+    margin: 4px;
 }
