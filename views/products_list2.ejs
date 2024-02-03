@@ -78,7 +78,7 @@
                             <div class="details" id="details1">
                                 <a href="product1.html">
                                     <h3>Samsung</h3>
-                                    <h4> Galaxy S24 5G (Amber Yellow,8GB,512GB Storage)</h4>
+                                    <h4><%= item.product_desc %></h4>
                                     <h2>89,999</h2>
 
                                 </a>
@@ -92,7 +92,14 @@
 
 
         </div>
-        <!-- </div> -->
+        </div>
 </body>
+
+<script>
+
+    const searchBar = document.getElementById("search_input");
+    searchBar.value = "<%= query %>"
+ 
+</script>
 
 </html>

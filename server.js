@@ -115,7 +115,7 @@ app.get('/search', async (req, res) => {
     let result = await pool.query(query)
     // console.log(result)
 
-    res.render('products_list2', { products: result[0] })
+    res.render('products_list2', { products: result[0] , query: query})
 
 
 
@@ -164,6 +164,34 @@ app.get('/login', (req, res) => {
 
 })
 
+app.get("/signup", (req , res)=>{
+    res.render("signup")
+})
+
+app.get("/store",  async (req , res)=> {
+
+    let data = await pool.query("select * from products");
+
+    res.render("products_list2", {products: data[0]})
+    
+    
+})
+
+app.get("/do_signup", (req , res)=>{
+
+    let email = req.body['email'];
+    let password =  req.body['password'];
+    let username = req.body['username']
+
+
+    pool.query(`insert into users values(default , '${username}' , '${email}' , '${password}')`)
+    if (req.session.next == undefined) {
+        res.redirect("/")
+    } else {
+        res.redirect(req.session.next)
+    }
+
+})
 
 app.post('/check_login', (req, res) => {
     console.log("checking login")
