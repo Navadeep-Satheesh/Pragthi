@@ -177,7 +177,7 @@ app.get("/store",  async (req , res)=> {
     
 })
 
-app.get("/do_signup", async  (req , res)=>{
+app.post("/do_signup", async  (req , res)=>{
 
     let email = req.body['email'];
     let password =  req.body['password'];
