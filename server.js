@@ -177,14 +177,14 @@ app.get("/store",  async (req , res)=> {
     
 })
 
-app.get("/do_signup", (req , res)=>{
+app.get("/do_signup", async  (req , res)=>{
 
     let email = req.body['email'];
     let password =  req.body['password'];
     let username = req.body['username']
 
 
-    pool.query(`insert into users values(default , '${username}' , '${email}' , '${password}')`)
+    let data = await pool.query(`insert into users values(default , '${username}' , '${email}' , '${password}')`)
     if (req.session.next == undefined) {
         res.redirect("/")
     } else {
